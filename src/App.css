@@ -1,38 +1,112 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+body {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-family: "Quicksand", sans-serif;
+  color: white;
+  padding: 4% 10%;
+}
+
+.pagination {
+  margin-top: 4rem;
+}
+
+.pagination button {
+  background: none;
+  color: white;
+  border: 1px solid #25262b;
+}
+
+button span {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.logo {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo svg {
+  font-size: 1.7rem;
+}
+
+.logo h3 {
+  margin-left: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-form {
+  display: flex;
+}
+
+.movie-grid {
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-top: 2.5rem;
+}
+
+.movie-card {
+  position: relative;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 50%);
+  border-radius: 1rem;
+  width: fit-content;
+}
+
+.movie-card img {
+  max-width: 100%;
+  object-fit: cover;
+  height: 100%;
+  border-radius: 1rem;
+}
+
+.movie-card .movie-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-radius: 1rem;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 70%;
+  cursor: default;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.movie-title {
+  font-weight: 600;
+}
+
+.loader {
+  width: 100%;
+  margin: 2rem auto;
+}
+
+.top-slider {
+  margin-top: 4rem;
+}
+
+.activeBtn {
+  border: 2px solid #e64980;
+}
+
+.alert-text {
+  margin-top: 5rem;
+}
+
+.content-wrapper {
+  position: relative;
 }
