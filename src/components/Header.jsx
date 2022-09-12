@@ -3,7 +3,7 @@ import { RiMovie2Line } from "react-icons/ri";
 import Form from "./Form";
 import { NavLink } from "react-router-dom";
 import { Button } from "@mantine/core";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 function Header({
   activeGenre,
@@ -12,6 +12,7 @@ function Header({
   setFiltered,
   totals,
   setPages,
+  setActivePage,
 }) {
   useEffect(() => {
     if (activeGenre === 0) {
@@ -33,46 +34,44 @@ function Header({
       </NavLink>
       <div className="header-container">
         <div className="movie-filters">
-          <div className="movie-filters">
-            <Button
-              className={activeGenre === 0 ? "activeBtn" : ""}
-              onClick={() => {
-                setActiveGenre(0);
-                setPages(totals);
-              }}
-              radius="xl"
-              variant="outline"
-              color="dark"
-            >
-              All
-            </Button>
-            <Button
-              className={activeGenre === 28 ? "activeBtn" : ""}
-              onClick={() => {
-                setActiveGenre(28);
-                setPages(20);
-              }}
-              variant="outline"
-              color="dark"
-              radius="xl"
-            >
-              Action
-            </Button>
-            <Button
-              className={activeGenre === 35 ? "activeBtn" : ""}
-              onClick={() => {
-                setActiveGenre(35);
-                setPages(20);
-              }}
-              variant="outline"
-              color="dark"
-              radius="xl"
-            >
-              Comedy
-            </Button>
-          </div>
+          <Button
+            className={activeGenre === 0 ? "activeBtn" : ""}
+            onClick={() => {
+              setActiveGenre(0);
+              setPages(totals);
+            }}
+            radius="xl"
+            variant="outline"
+            color="dark"
+          >
+            All
+          </Button>
+          <Button
+            className={activeGenre === 28 ? "activeBtn" : ""}
+            onClick={() => {
+              setActiveGenre(28);
+              setPages(20);
+            }}
+            variant="outline"
+            color="dark"
+            radius="xl"
+          >
+            Action
+          </Button>
+          <Button
+            className={activeGenre === 35 ? "activeBtn" : ""}
+            onClick={() => {
+              setActiveGenre(35);
+              setPages(20);
+            }}
+            variant="outline"
+            color="dark"
+            radius="xl"
+          >
+            Comedy
+          </Button>
         </div>
-        <Form></Form>
+        <Form setActivePage={setActivePage}></Form>
       </div>
     </header>
   );

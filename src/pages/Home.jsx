@@ -2,7 +2,6 @@ import Header from "../components/Header";
 import { useState, useEffect } from "react";
 import MovieList from "../components/MovieList";
 import { Pagination, Loader } from "@mantine/core";
-import TopList from "../components/TopList";
 import "@splidejs/splide";
 import "@splidejs/react-splide/css";
 import { RiH1 } from "react-icons/ri";

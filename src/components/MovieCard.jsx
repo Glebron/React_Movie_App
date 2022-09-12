@@ -1,9 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-function MovieCard({ movie }) {
+function MovieCard({ movie, setModalOpen, modalOpen, setModalContent }) {
+  const openModal = () => {
+    setModalOpen(!modalOpen);
+    setModalContent(movie);
+  };
+
   return (
-    <motion.div layout className="movie-card">
+    <motion.div onClick={openModal} layout className="movie-card">
       <img
         src={
           !movie.poster_path

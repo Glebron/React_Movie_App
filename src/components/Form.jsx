@@ -5,13 +5,16 @@ import { TbMovie } from "react-icons/tb";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Search() {
+function Search({ setActivePage }) {
   const [input, setInput] = useState("");
   const navigate = useNavigate();
 
   const searchMovies = async (e) => {
     e.preventDefault();
-    navigate("/search/" + input);
+    if (input) {
+      navigate("/search/" + input);
+      setActivePage(1);
+    }
   };
 
   return (

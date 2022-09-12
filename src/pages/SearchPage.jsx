@@ -53,6 +53,7 @@ function SearchPage() {
       ></Header>
       {filtered.length ? (
         <Pagination
+          page={activePage}
           onChange={setActivePage}
           total={Math.floor(pages / 20)}
           className="pagination"
